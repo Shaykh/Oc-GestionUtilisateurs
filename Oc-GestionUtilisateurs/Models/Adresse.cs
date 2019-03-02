@@ -33,8 +33,8 @@ namespace Oc_GestionUtilisateurs.Models
             }
         }
 
-        private int codePostal;
-        public int CodePostal
+        private int? codePostal;
+        public int? CodePostal
         {
             get { return codePostal; }
             set
@@ -61,8 +61,8 @@ namespace Oc_GestionUtilisateurs.Models
             }
         }
 
-        private int numero;
-        public int Numero
+        private int? numero;
+        public int? Numero
         {
             get { return numero; }
             set
