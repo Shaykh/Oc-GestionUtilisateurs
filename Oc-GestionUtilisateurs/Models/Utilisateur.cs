@@ -17,10 +17,7 @@ namespace Oc_GestionUtilisateurs.Models
                 if (value != nom)
                 {
                     nom = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("Nom"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Nom"));
                 }
             }
         }
