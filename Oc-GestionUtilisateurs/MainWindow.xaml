@@ -45,13 +45,22 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content=" * "></Label>
+                            <Label Content="- "></Label>
                             <Label Content="{Binding Nom}"></Label>
                             <Label Content="{Binding Prenom}"></Label>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <Rectangle Grid.Column="1" Fill="Red"></Rectangle>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Fill="Red" Grid.Row="1"></Rectangle>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
