@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 using Oc_GestionUtilisateurs.Models;
 
-namespace Oc_GestionUtilisateurs.ViewModels
+namespace Oc_GestionUtilisateurs
 {
     public class FicheUtilisateurViewModel : INotifyPropertyChanged
     {
