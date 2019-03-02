@@ -32,9 +32,9 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0">Ajout d'un utilisateur</Button>
-            <Button Command="{Binding SupprimerFicheUtilisateur }" Grid.Column="1">Supprimer l'utilisateur</Button>
-            <Button Command="{Binding ReinitialiserFicheUtilisateur }" Grid.Column="2">Remise à zéro de l'utilisateur</Button>
+            <Button Grid.Column="0" Command="{Binding AjouterFicheUtilisateur }">Ajout d'un utilisateur</Button>
+            <Button Command="{Binding SupprimerFicheUtilisateur }" CommandParameter="{Binding ElementName=lbUtilisateurs, Path=SelectedItem }" Grid.Column="1">Supprimer l'utilisateur</Button>
+            <Button Command="{Binding ReinitialiserFicheUtilisateur }" CommandParameter="{Binding ElementName=lbUtilisateurs, Path=SelectedItem }" Grid.Column="2">Remise à zéro de l'utilisateur</Button>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -82,11 +82,11 @@
                         <Label Grid.Column="0" Grid.Row="2">Age</Label>
                         <Label Grid.Column="0" Grid.Row="3">Genre</Label>
                         <Label Grid.Column="0" Grid.Row="4">Profession</Label>
-                        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding UtilisateurSelectionne.Nom }"></TextBox>
-                        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding UtilisateurSelectionne.Prenom }"></TextBox>
-                        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding UtilisateurSelectionne.Age }"></TextBox>
-                        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding UtilisateurSelectionne.Genre }"></TextBox>
-                        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding UtilisateurSelectionne.Profession }"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding UtilisateurSelectionne.Nom, Mode=TwoWay}"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding UtilisateurSelectionne.Prenom, Mode=TwoWay }"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding UtilisateurSelectionne.Age, Mode=TwoWay }"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding UtilisateurSelectionne.Genre, Mode=TwoWay }"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding UtilisateurSelectionne.Profession, Mode=TwoWay }"></TextBox>
                     </Grid>
                 </StackPanel>
                 <Rectangle Fill="Red" Grid.Row="1"></Rectangle>
@@ -104,6 +104,16 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0">Numéro</Label>
+                        <Label Grid.Column="0" Grid.Row="1">Rue</Label>
+                        <Label Grid.Column="0" Grid.Row="2">Code Postal</Label>
+                        <Label Grid.Column="0" Grid.Row="3">Ville</Label>
+                        <Label Grid.Column="0" Grid.Row="4">Pays</Label>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding UtilisateurSelectionne.Adresse.Numero, Mode=TwoWay}"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding UtilisateurSelectionne.Adresse.Rue, Mode=TwoWay }"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding UtilisateurSelectionne.Adresse.CodePostal, Mode=TwoWay }"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding UtilisateurSelectionne.Adresse.Ville, Mode=TwoWay }"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding UtilisateurSelectionne.Adresse.Pays, Mode=TwoWay }"></TextBox>
                     </Grid>
                 </StackPanel>
             </Grid>
