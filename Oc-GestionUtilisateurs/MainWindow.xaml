@@ -31,9 +31,27 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0">Ajout d'un utilisateur</Button>
-            <Button Grid.Column="1">Supprimer l'utilisateur</Button>
-            <Button Grid.Column="2">Remise à zéro de l'utilisateur</Button>
+            <Button Command="{Binding AjouterFicheUtilisateur }" CommandParameter="{Binding ElementName=, Path=}" Grid.Column="0">Ajout d'un utilisateur</Button>
+            <Button Command="{Binding SupprimerFicheUtilisateur }" Grid.Column="1">Supprimer l'utilisateur</Button>
+            <Button Command="{Binding ReinitialiserFicheUtilisateur }" Grid.Column="2">Remise à zéro de l'utilisateur</Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="lbUtilisateurs" Grid.Column="0" ItemsSource="{Binding Fiches }">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content=" * "></Label>
+                            <Label Content="{Binding Nom}"></Label>
+                            <Label Content="{Binding Prenom}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
     </Grid>
 </Window>
