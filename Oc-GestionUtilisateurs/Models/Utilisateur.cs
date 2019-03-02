@@ -79,6 +79,20 @@ namespace Oc_GestionUtilisateurs.Models
             }
         }
 
+        private Adresse adresse;
+        public Adresse Adresse
+        {
+            get { return adresse; }
+            set
+            {
+                if (!value.Equals(adresse))
+                {
+                    adresse = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Adresse"));
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
