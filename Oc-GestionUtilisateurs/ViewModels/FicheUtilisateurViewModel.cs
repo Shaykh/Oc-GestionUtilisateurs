@@ -72,8 +72,8 @@ namespace Oc_GestionUtilisateurs
             {
                 if (ajouterFicheUtilisateur == null)
                 {
-                    ajouterFicheUtilisateur = new RelayCommand<Utilisateur>(
-                        (utilisateur) => Fiches.Add(utilisateur)
+                    ajouterFicheUtilisateur = new RelayCommand<object>(
+                        (obj) => Fiches.Add(new Utilisateur())
                     );
                 }
                 return ajouterFicheUtilisateur;
