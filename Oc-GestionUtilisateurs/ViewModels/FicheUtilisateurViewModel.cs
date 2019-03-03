@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.Serialization;
+﻿using System.ComponentModel;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
@@ -47,13 +45,15 @@ namespace Oc_GestionUtilisateurs
         public FicheUtilisateurViewModel()
         {
             Fiches = new ObservableCollection<Utilisateur>();
+            utilisateurSelectionne = new Utilisateur();
+            Fiches.Add(utilisateurSelectionne);
         }
 
         public ICommand ReinitialiserFicheUtilisateur { get; } = new RelayCommand<Utilisateur>(
             (utilisateur) =>
             {
-                utilisateur.Adresse.CodePostal = null;
-                utilisateur.Adresse.Numero = null;
+                utilisateur.Adresse.CodePostal = 0;
+                utilisateur.Adresse.Numero = 0;
                 utilisateur.Adresse.Pays = string.Empty;
                 utilisateur.Adresse.Rue = string.Empty;
                 utilisateur.Adresse.Ville = string.Empty;
