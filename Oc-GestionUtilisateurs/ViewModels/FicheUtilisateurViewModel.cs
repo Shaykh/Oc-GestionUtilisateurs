@@ -45,8 +45,6 @@ namespace Oc_GestionUtilisateurs
         public FicheUtilisateurViewModel()
         {
             Fiches = new ObservableCollection<Utilisateur>();
-            utilisateurSelectionne = new Utilisateur();
-            Fiches.Add(utilisateurSelectionne);
         }
 
         public ICommand ReinitialiserFicheUtilisateur { get; } = new RelayCommand<Utilisateur>(
