@@ -44,7 +44,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <Label>Liste des utilisateurs</Label>
-                <ListBox x:Name="lbUtilisateurs" ItemsSource="{Binding Fiches }">
+                <ListBox x:Name="lbUtilisateurs" ItemsSource="{Binding Fiches }" SelectedItem="{Binding UtilisateurSelectionne}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
