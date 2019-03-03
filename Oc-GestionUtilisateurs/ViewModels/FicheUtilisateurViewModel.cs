@@ -50,11 +50,11 @@ namespace Oc_GestionUtilisateurs
         public ICommand ReinitialiserFicheUtilisateur { get; } = new RelayCommand<Utilisateur>(
             (utilisateur) =>
             {
-                utilisateur.Adresse.CodePostal = 0;
-                utilisateur.Adresse.Numero = 0;
-                utilisateur.Adresse.Pays = string.Empty;
-                utilisateur.Adresse.Rue = string.Empty;
-                utilisateur.Adresse.Ville = string.Empty;
+                utilisateur.CodePostal = 0;
+                utilisateur.Numero = 0;
+                utilisateur.Pays = string.Empty;
+                utilisateur.Rue = string.Empty;
+                utilisateur.Ville = string.Empty;
                 utilisateur.Age = 0;
                 utilisateur.Genre = string.Empty;
                 utilisateur.Nom = string.Empty;
